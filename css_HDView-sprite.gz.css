@@ -1,0 +1,900 @@
+
+/***************************** Page Style  *********************************/
+
+#hdViewHTML{
+	*height:100%;
+	*width:100%;
+	*overflow:hidden;
+}
+#hdviewBody{
+	text-align:center;
+	*height:100%;
+	*width:100%;
+	margin:0;
+	padding:0;
+	
+	*overflow:hidden;
+	font-family:"Trebuchet MS",helvetica,sans-serif;
+}
+.t360{
+	width:24px;
+	height:12px;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -0px;
+	background-repeat:repeat;
+	position:relative;
+	top:2px;
+	left:1px;
+}
+
+#tipLoading{
+	position:relative;
+	top:7px;
+	font-family:arial;
+	font-size:20px;
+	color:#FFF;
+}
+
+#turntablePlayItem{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:8;
+	
+	display:none;
+	left:0;
+}
+.content{
+	margin:0 auto;
+	width:100%;
+	width:98%\9;/*fixed for IE*/
+	position:relative;
+	-webkit-user-select:none;
+}
+div.slider div.knob {
+	-moz-background-clip:border;
+	-moz-background-origin:padding;
+	-moz-background-size:auto auto;
+	background-attachment:scroll;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -12px;
+	background-repeat:no-repeat;
+	height:20px;
+	width:25px;
+	top:6px;
+	position:relative;
+}
+#playContainer #btnPlay{
+	background-repeat:no-repeat;
+	width:9px;
+	height:10px;
+	position:relative;
+	top:13px;
+	left:13px;
+	cursor:pointer;
+	*left:0\9;/*fixed for IE*/	
+	/*filter:alpha(opacity=50);*/
+}
+/*.mouseOut #btnPlay{
+	filter:alpha(opacity=50);
+}
+.playMouseOver .mouseOut #btnPlay{
+	filter:alpha(opacity=90);
+}*/
+#playContainer .play{
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -32px;
+}
+#playContainer .playGray{
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -42px;
+	cursor:text;
+}
+#playContainer .pause{
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -52px;
+}
+#sliderContainer{
+	position:relative;
+	float:left;
+	top:2px;
+}
+#progress{
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: right -62px;
+	background-repeat:no-repeat;
+	background-color:#aaa;
+	position:absolute;
+	height:10px;
+	width:200px;
+	top:11px;
+	left:5px;
+}
+
+
+/**************************************************************************/
+
+
+#myGallery
+{
+	z-index:5;
+	border: 1px solid #fff;
+	width:1200px;
+	height:1200px;
+	margin:auto;
+}
+
+.jdGallery a
+{
+	outline:0;
+}
+
+#flickrGallery
+{
+	width: 500px;
+	height: 334px;
+}
+
+#myGallery img.thumbnail, #myGallerySet img.thumbnail
+{
+	display: none;
+}
+
+.jdGallery
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jdGallery #turntablePlayItemImg
+{
+	border: 0;
+	margin: 0;
+}
+#turntDrag img{
+	border:0;
+	width:100%;
+	height:100%;	
+}
+.jdGallery .slideElement{
+	background-color: #F0F0F0;
+	width: 100%;
+	height: 100%;
+}
+.slideElement
+{
+	background-repeat: no-repeat;
+	background-position: center center;
+	position:absolute;
+	z-index:1;
+	left:0px;
+	right:0px;
+	margin:0px;
+	padding:0px;
+}
+.slideElement table{
+	width:100%;
+	height:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+.slideElement table td{
+	text-align:center;
+	vertical-align:middle;
+}
+.jdGallery .loadingContainer{
+	width: 99.9%;
+	height: 99.9%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #f0f0f0;
+	border:none;
+	z-index:9;
+}
+.jdGallery .loadingImagesContainer{
+	background-color:transparent;	
+}
+.jdGallery .loadingElement
+{
+	width:220px;
+	height:121px;
+	position:fixed;
+	left:42%;
+	top:56%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('HDView/loadingImage.gif');
+}
+.jdGallery .loadingImagesContainer .loadingElement{
+	background-image: url('HDView/loadingImages.gif');
+}
+
+.jdGallery .slideInfoZone
+{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	margin: 0px;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	background: #333;
+	color: #fff;
+	text-indent: 0;
+	overflow: hidden;
+}
+
+* html .jdGallery .slideInfoZone
+{
+	bottom: -1px;
+}
+
+.jdGallery .slideInfoZone h2
+{
+	padding: 0;
+	font-size: 80%;
+	margin: 0;
+	margin: 2px 5px;
+	font-weight: bold;
+	color: inherit;
+}
+
+.jdGallery .slideInfoZone p
+{
+	padding: 0;
+	font-size: 60%;
+	margin: 2px 5px;
+	color: #eee;
+}
+
+.jdGallery div.carouselContainer
+{
+		height: 0px;
+	width: 100%;
+	z-index: 10;
+	margin: 0px;
+	left: 0;
+	top: 0;
+      position: absolute;
+
+}
+
+.jdGallery a.carouselBtn
+{
+	position: absolute;
+	bottom: 0;
+	right: 30px;
+	height: 20px;
+	text-align: center;
+	padding: 0 10px;
+	font-size: 13px;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+}
+
+.jdGallery .carousel
+{
+height: 0px;
+	
+}
+
+.jdExtCarousel
+{
+      height:0px;
+	overflow: hidden;
+	position: relative;
+	/*margin:0 auto;*/
+	margin:0;
+	padding-left:15px;
+	width:1000px;
+	
+	padding-top:14px;
+	font-family:trebuchet MS;
+}
+.resolution{
+	height:40px;
+	padding: 8px 0 0 84px;
+	text-align:left;
+}
+.rContent{
+	float:left;
+	padding-top:3px;
+	font-size:14px;
+}
+.resolution .grayText{
+	color:#565656;
+}
+.resolution .resolutionText{
+	cursor:pointer;	
+}
+.resolution .currentResolution{
+	cursor:text;	
+}
+.resolution .link{
+	color:#3084B9;
+	cursor:pointer;
+	font-weight:bold;
+}
+.resolution .grayLink{
+	color:#565656;	
+}	
+#standardLink{
+	display:inline-block;
+	zoom: 1;
+    *display: inline;  
+    width:61px;  
+}
+#HDLink{
+	display:inline-block;
+	zoom: 1;
+    *display: inline;  
+    width:27px;  
+}
+#originalLink{
+	display:inline-block;
+	zoom: 1;
+    *display: inline;  
+    width:55px;  
+}
+.StandardResolutionContainer{
+	float:left;
+	width:270px;
+}
+.HDResolutionContainer{
+	float:left;
+	width:157px;
+}
+#OriginalResolutionContainer{
+	float:left;
+}
+.resolution .size{
+	color:#8A8A8A;
+	visibility: hidden;
+}
+#originalSize{
+	visibility: hidden; 	
+}
+.resolution .currentLink{
+	color:#000;
+	font-weight:bold;
+}
+.carouselWrapperContainter{
+	/*position:relative;*/
+}
+.jdGallery .carousel .carouselWrapper, .jdExtCarousel .carouselWrapper
+{
+	/*width: 100%;*/
+	border: 1px solid #CCC;
+	height: 83px;
+	padding: 9px 0 0 9px;
+	overflow: auto;
+	text-align:left;
+	
+	position:relative\9;/*fixed for IE*/
+	_width:609px; /* IE6 */
+}
+
+.carouseLeftBorder{
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -72px;
+	background-repeat:no-repeat;
+	position:absolute;
+	left:100px;
+	top:14px;
+	width:6px;
+	height:6px;
+}
+.carouseRightBorder{
+	position:absolute;
+	right:0;
+	top:14px;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -78px;
+	background-repeat:no-repeat;
+	width:6px;
+	height:6px;
+}
+.jdGallery .carousel .carouselInner, .jdExtCarousel .carouselInner
+{
+	position: relative;
+}
+.carouselInner .thumbnailContainer{
+	float: left;
+	border: solid 1px #fff;
+	margin-right: 1px; 
+	width: 64px; 
+	height: 64px;
+}
+.carouselInner .thumbnail{
+	cursor: pointer;
+	background: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 0px; 
+	height: 0px; 
+	visibility: hidden; 
+}
+.carouselInner .overThumbnail{
+	border: solid 1px #818181;
+}
+.carouselInner .currentThumbnail{
+	border-color:#fb7e00;
+}
+.jdGallery .wall .thumbnail, .jdExtCarousel .wall .thumbnail
+{
+	margin-bottom: 10px;
+}
+
+.jdGallery .carousel .label, .jdExtCarousel .label
+{
+	font-size: 13px;
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	padding: 0;
+	margin: 0;
+}
+
+.jdGallery .carousel .wallButton, .jdExtCarousel .wallButton
+{
+	font-size: 10px;
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	padding: 1px 2px;
+	margin: 0;
+	background: #222;
+	border: 1px solid #888;
+	cursor: pointer;
+}
+
+.jdGallery .carousel .label .number, .jdExtCarousel .label .number
+{
+	color: #b5b5b5;
+}
+
+.jdGallery a
+{
+	font-size: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+.jdGallery a.right, .jdGallery a.left
+{
+	position: absolute;
+	/*height: 99%;*/
+	height:70px;
+	width: 70px;/*25%;*/
+	cursor: pointer;
+	z-index:10;
+	/*filter:alpha(opacity=50);*/
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+* html .jdGallery a.right, * html .jdGallery a.left
+{
+	/*filter:alpha(opacity=50);*/
+}
+
+.jdGallery a.right:hover, .jdGallery a.left:hover
+{
+	/*filter:alpha(opacity=90);*/
+	-moz-opacity:0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+}
+
+.jdGallery a.left
+{
+	left: 0;
+	top: 0;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -84px;
+	background-repeat:no-repeat;
+}
+
+* html .jdGallery a.left { 
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -84px;
+	background-repeat:no-repeat; 
+}
+
+.jdGallery a.right
+{
+	right: 0;
+	top: 0;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: right -154px;
+	background-repeat:no-repeat;
+}
+
+* html .jdGallery a.right { 
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: right -154px;
+	background-repeat:no-repeat;
+}
+
+/************* arrow out ************/
+.outArrow{
+	position: fixed;	
+}
+a.right, a.left{
+	height:0px;
+	width: 0px;
+	font-size: 100%;
+	text-decoration: none;
+	color: inherit;
+	outline:0;
+	cursor: pointer;
+	z-index:10;
+	/*filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;*/
+	/*filter:alpha(opacity=0);*/
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+	top:60%;	
+	*display:none;
+}
+a.right{	
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: right -224px;
+	background-repeat:no-repeat;
+	right:111px;
+} 
+a.left{	
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -294px;
+	background-repeat:no-repeat;
+	left:112px;
+}
+
+* html a.right, * html a.left{
+	/*filter:alpha(opacity=50);*/
+}
+
+a.right:hover, a.left:hover{
+	/*filter:alpha(opacity=90);*/
+	-moz-opacity:0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+}
+
+* html a.left { 
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -84px;
+	background-repeat:no-repeat;
+}
+* html a.right { 
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: right -154px;
+	background-repeat:no-repeat;}
+/************* arrow out end ************/
+
+.jdGallery a.open
+{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.withArrows a.open
+{
+	position: absolute;
+	top: 0;
+	left: 25%;
+	height: 99%;
+	width: 50%;
+	cursor: pointer;
+	z-index: 10;
+	background: none;
+	-moz-opacity:0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+}
+
+.withArrows a.open:hover { }
+
+* html .withArrows a.open:hover {}
+	
+	
+/* Gallery Sets */
+
+.jdGallery a.gallerySelectorBtn
+{
+	z-index: 15;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	height: 20px;
+	text-align: center;
+	padding: 0 10px;
+	font-size: 13px;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	opacity: .4;
+	-moz-opacity: .4;
+	-khtml-opacity: 0.4;
+	filter:alpha(opacity=40);
+}
+
+.jdGallery .gallerySelector
+{
+	z-index: 20;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000;
+}
+
+.jdGallery .gallerySelector h2
+{
+	margin: 0;
+	padding: 10px 20px 10px 20px;
+	font-size: 20px;
+	line-height: 30px;
+	color: #fff;
+}
+
+.jdGallery .gallerySelector .gallerySelectorWrapper
+{
+	overflow: hidden;
+}
+
+.jdGallery .gallerySelector .gallerySelectorInner div.galleryButton
+{
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 1px solid #888;
+	padding: 5px;
+	height: 40px;
+	color: #fff;
+	cursor: pointer;
+	float: left;
+}
+
+.jdGallery .gallerySelector .gallerySelectorInner div.hover
+{
+	background: #333;
+}
+
+.jdGallery .gallerySelector .gallerySelectorInner div.galleryButton div.preview
+{
+	background: #000;
+	background-position: center center;
+	float: left;
+	border: none;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+}
+
+.jdGallery .gallerySelector .gallerySelectorInner div.galleryButton h3
+{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.jdGallery .gallerySelector .gallerySelectorInner div.galleryButton p.info
+{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: normal;
+	color: #aaa;
+}
+.sliderBlank{
+	width:3px;
+	float:left;
+	height:30px;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -364px;
+	background-repeat:repeat-x;
+}
+.slider{
+	-moz-background-clip:border;
+	-moz-background-origin:padding;
+	-moz-background-size:auto auto;
+	background-attachment:scroll;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -390px;
+	background-repeat:no-repeat;
+	height:32px;
+	width:368px;
+	cursor:pointer;
+	float:left;
+	position:relative;
+}
+#playContainer{
+	float:left;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -424px;
+	background-repeat:no-repeat;
+	width:35px;
+	height:36px;				
+	cursor:pointer;
+}
+.mouseOut{
+	opacity: .9;
+	-moz-opacity: .9;
+	-khtml-opacity: 0.9;
+	/*filter:alpha(opacity=90);*/
+}
+/*.playMouseOver .mouseOut{
+	opacity: .9;
+	-moz-opacity: .9;
+	-khtml-opacity: 0.9;
+	filter:alpha(opacity=90);
+}*/
+
+#turntDrag{
+	position:absolute;
+	z-index:3;
+	cursor:pointer;
+	width:100%;
+	height:100%;
+	left: 0;
+	top: 0;	
+	background-image:url(HDView/transparent.gif);
+	background-position:0 0;
+	background-repeat:repeat;
+}
+#imageDrag{
+	position:absolute;
+	z-index:9;
+	width:100%;
+	height:100%;
+	left: 0;
+	top: 0;	
+	background-image:url(HDView/transparent.gif);
+	background-position:0 0;
+	background-repeat:repeat;
+}
+.imageDragMouseOver{
+	cursor:pointer;	
+}
+#action_Turntable{
+	position:fixed;
+	bottom:57px;
+	/*top:1320px;*/
+	left:36%;
+	z-index:10;
+	width:418px;
+}
+#signature360{
+	display:none;
+	width:68px;
+	height:36px;
+	top:15px;
+	left:16px;
+	position:absolute;
+	z-index:10;
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -460px;
+	background-repeat:no-repeat;
+}
+.TurntableFixed{
+	top:113px;
+}
+.logoHDView{
+	float:left;
+	height:90px;
+	padding-right:11px;
+	padding-top:5px;
+	width:74px;
+}
+.closeWindow{
+	float:right;
+	width:105px;
+	height:23px;	
+	color:#3084B9;
+	cursor:pointer;
+	font-weight:bold;
+	font-size:14px;
+	line-height:23px;
+}
+.addToCart{
+	float:right;
+	width:100px;
+	height:23px;
+}
+.HDContainer{
+	overflow:auto;
+	
+	border-top: 1px solid #FFF;
+	padding-top:15px;
+	padding-left:17px;
+	-webkit-user-select:none;
+	/*padding-right:17px;*/
+	position:relative\9;/*fixed for IE*/
+	/*width:98.9%\9;/*fixed for IE*/
+      height:1000px;
+}
+
+#hdViewTip{
+	position:absolute;
+	top:72px;
+	left:40%;		
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -496px;
+	background-repeat:no-repeat;
+	font-size:12px;
+	text-align:left;
+	padding:8px 15px 5px 10px;
+	z-index:50;
+	width:253px;
+	height:90px;
+	color:#454545;
+	line-height:15px;
+}
+#hdViewClose{
+	width:16px;
+	height:16px;
+	float:right;
+	cursor:pointer;	
+	position: relative;
+    right: 2px;
+}
+.hdViewTipContent{
+	width:230px;
+}
+#hdViewImgDragTip{
+	position:absolute;
+	top:72px;
+	left:40%;		
+  background-image: url('HDView/HDViewSpriteV.png');
+  background-position: left -496px;
+	background-repeat:no-repeat;
+	font-size:12px;
+	color:#454545;
+	line-height:15px;
+	text-align:left;
+	padding:5px 8px 5px 10px;
+	z-index:50;
+	width:256px;
+	height:90px;
+}
+.hdViewImgDragTipText{
+	margin-top:3px;
+	margin-top:9px\9;/*fixed for IE*/
+}
+#hdViewImgDragClose{
+	width:16px;
+	height:16px;
+	float:right;
+	cursor:pointer;	
+	margin:3px 6px 0 0;
+}
+.hdViewImgDragTipTitle{
+	float:left;
+	color:#000;
+	font-weight:bold;
+	font-size:13px;	
+	line-height:20px;
+}
+/*** last content***/
+a.show{
+	display:block;
+}
+.show{
+	display:block;
+}
+.hidden{
+	display:none;
+}
+.clear{
+	clear:both;
+}

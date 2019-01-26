@@ -1,0 +1,9 @@
+#playContainer #btnPlay{
+	left:13px;
+}
+.mouseOut .slider{
+	/*filter:alpha(opacity=50);*/
+}
+.playMouseOver .mouseOut .slider{
+	/*filter:alpha(opacity=90);*/
+}
